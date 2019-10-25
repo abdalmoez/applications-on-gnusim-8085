@@ -1,0 +1,21 @@
+
+;<Practice Addition carry>
+
+MVI A,45
+MVI B,48
+MVI C,32
+ADC B; A-> 93
+ADC C; A-> 125
+STA RESULT1
+
+MVI A,129
+MVI B,145
+MVI C,44
+ADC B; A-> 18
+ADC C; A-> 63
+STA RESULT2
+
+hlt
+
+RESULT1: db 0 ;RESULT1 must be 125
+RESULT2: db 0 ;RESULT1 must be 63

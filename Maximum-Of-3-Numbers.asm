@@ -1,0 +1,13 @@
+	   LHLD C050
+	   XCHG
+	   LHLD C052
+	   MVI C,00
+	   DAD D
+	   JNC AHEAD
+	   INR C
+AHEAD: 	   SHLD C054
+	   MOV A,C
+	   STA C056
+	   HLT
+ORG 0
+# DB 45H,A6H,23H,9BH

@@ -1,0 +1,27 @@
+
+;<Maximum and minimum of array>
+
+	LXI H,ARRAY
+	MOV B,M
+	MOV C,M
+	MVI D,SIZE
+LOOP:	MOV A,M
+	CMP B
+	JC MIN
+	MOV B,A
+MIN:	CMP C
+	JNC SKIP
+	MOV C,A
+SKIP:	INX H
+	DCR D
+	JNZ LOOP
+	LXI H,2000H
+	MOV M,B;Move maximum to 2000H
+	INX H
+	MOV M,C;Move minimum to 2001H
+	HLT
+
+
+
+SIZE: EQU 10
+ARRAY: db 12,4,128,3,151,1,7,9,8,18
